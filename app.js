@@ -47,9 +47,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // TODO: Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
-  var ab = sum(a,b)[0];
-  var result = sum(ab,c)[0];
-  return [result];
+  var absum = sum(a,b)[0];
+  var sum3 = sum(absum,c)[0];
+  var abmult = multiply(a,b)[0];
+  var mult3 = multiply(abmult,c)[0];
+  return [sum3, mult3, ];
 }
 
 // TODO: Here is the test for sumAndMultiply(); uncomment it to run it
