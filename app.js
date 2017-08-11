@@ -8,10 +8,13 @@ Test this function by hand in the console to get it working, and when you think 
 For TODO item, be sure to change it to say DONE when you have successfully completed the task*/
 
 // TODO: Write your code here
+var sumMsg = document.getElementById('sum');
 function sum(a,b){ //eslint-disable-line
   var result = a + b;
   var output = 'The sum of ' + a + ' and ' + b + ' is ' + result + '.';
+  sumMsg.innerText = result;
   return [result, output];
+
 }
 
 // TODO: Here is the test for sum(); uncomment it to run it
@@ -26,8 +29,10 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // TODO: Write your code here
+var multMsg = document.getElementById('mult');
 function multiply(a,b){ //eslint-disable-line
   var answer = (a * b);
+  multMsg.innerText = answer;
   var output = 'The product of ' + a + ' and ' + b + ' is ' + answer + '.';
   return [answer, output];
 }
@@ -46,9 +51,13 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // TODO: Write your code here
+var samSumMsg = document.getElementById('samSum');
+var samProdMsg = document.getElementById('samProd');
 function sumAndMultiply(a,b,c){ //eslint-disable-line
   var sum3 = sum(sum(a,b)[0],c)[0];
   var mult3 = multiply(multiply(a,b)[0],c)[0];
+  samSumMsg.innerText = sum3;
+  samProdMsg.innerText = mult3;
   return [sum(sum(a,b)[0],c)[0], mult3, a + ' and ' + b + ' and ' + c + ' sum to ' + sum3 + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + mult3 + '.'];
 }
 
@@ -66,12 +75,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // TODO: Write your code here
 var testArray = [2,3,4]; //eslint-disable-line
-
+var sumArrayMsg = document.getElementById('sumArray');
 function sumArray(testArray){ //eslint-disable-line
   var updatingSum = 0;
   for (var i = 0; i < testArray.length; i++) {
     updatingSum = sum(updatingSum,testArray[i])[0];
   }
+  sumArrayMsg.innerText = updatingSum;
   return [updatingSum, testArray.toString() + ' was passed in as an array of numbers, and ' + updatingSum + ' is their sum.'];
 }
 
@@ -88,11 +98,13 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
+var multArrayMsg = document.getElementById('multArray');
 function multiplyArray(testArray){ //eslint-disable-line
   var updatingProduct = 1;
   for (var i = 0; i < testArray.length; i++) {
     updatingProduct = multiply(updatingProduct,testArray[i])[0];
   }
+  multArrayMsg.innerText = updatingProduct;
   return [updatingProduct, 'The numbers ' + testArray.toString() + ' have a product of ' + updatingProduct + '.'];
 }
 
